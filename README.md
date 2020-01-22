@@ -1,12 +1,15 @@
-#Springit
+Springit
+===
 
 The purpose of that project is to learn how to use Spring Boot 2..x for creating the Reddit clone application
 
-##Getting Started
+Getting Started
+==
 
 TODO: Hwot to get started
 
-###Prerequisities
+Prerequisities
+=
 
 TODO: What do you need to get started
 
@@ -14,7 +17,8 @@ TODO: What do you need to get started
 give examples
 ```
 
-###Installing
+Installing
+=
 
 TODO: installing
 
@@ -22,19 +26,24 @@ TODO: installing
 installing proces
 ```
 
-##Running the tests
+Running the tests
+=
 
 TODO: explain how to run automated tests
 
-##Deployment
+Deployment
+==
 
-##Build With
+Build With
+==
 * [Spring Boot 2.x](https://spring.io/projects/spring-boot)  
 * [Spring Framework 5.x](https://spring.io/projects/spring-framework)
 
-##Versioning
+Versioning
+==
 
-##Authors
+Authors
+==
 
 * **Dan Vega** - instructor
 * **Mirek Krenc** - student
