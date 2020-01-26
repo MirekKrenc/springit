@@ -18,6 +18,7 @@ public class Comment {
     private String body;
 
     // Link
+    private Link link;
 
 
 }
