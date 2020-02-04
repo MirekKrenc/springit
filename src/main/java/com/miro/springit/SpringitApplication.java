@@ -51,7 +51,7 @@ public class SpringitApplication {
 	}
 
 
-	@Bean
+	//@Bean
 	CommandLineRunner loggingRunner() {
 		return args -> {
 			log.error("CommandLineRunner.run();");
@@ -69,16 +69,18 @@ public class SpringitApplication {
 			Link link = new Link("Drogie borowki w sklepie", "https://sklep6028485.homesklep.pl/pl/p/Borowki/23");
 			linkRepository.save(link);
 
-			Comment comment = new Comment("Borowki sa drogie ale bardzo smaczne", link);
-			commentRepository.save(comment);
+//			Comment comment = new Comment("Borowki sa drogie ale bardzo smaczne", link);
+//			commentRepository.save(comment);
 
-			link.addComment(comment);
+			//link.addComment(comment);
 
-			Comment comment1 = new Comment("Pychotki te borowki", link);
-			commentRepository.save(comment1);
+//			Comment comment1 = new Comment("Pychotki te borowki", link);
+//			commentRepository.save(comment1);
 
-			link.addComment(comment1);
+			//link.addComment(comment1);
 
+			Link link2 = new Link("Zlociutkie banany", "https://sklep6028485.homesklep.pl/pl/p/Banany/3");
+			linkRepository.save(link2);
 			//System.out.println(link.getComments());
 		};
 	}
