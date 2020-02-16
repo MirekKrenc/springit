@@ -5,6 +5,7 @@ import com.miro.springit.domain.Comment;
 import com.miro.springit.domain.Link;
 import com.miro.springit.repository.CommentRepository;
 import com.miro.springit.repository.LinkRepository;
+import org.ocpsoft.prettytime.PrettyTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +42,20 @@ public class SpringitApplication {
 	}
 
 	@Bean
-	@Profile("dev")
-	CommandLineRunner runner() {
-		return args -> {
-			System.out.println("Welcome message from properties displayed only in dev profile is: " + springitConfiguration.getWelcomeMsg());
-			String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
-			Arrays.stream(beanDefinitionNames).sorted().forEach(bean -> System.out.println("BEAN: " + bean));
-		};
+	PrettyTime prettyTime()
+	{
+		return new PrettyTime();
 	}
+
+//	@Bean
+//	@Profile("dev")
+//	CommandLineRunner runner() {
+//		return args -> {
+//			System.out.println("Welcome message from properties displayed only in dev profile is: " + springitConfiguration.getWelcomeMsg());
+//			String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+//			//Arrays.stream(beanDefinitionNames).sorted().forEach(bean -> System.out.println("BEAN: " + bean));
+//		};
+//	}
 
 
 	//@Bean
@@ -62,27 +69,27 @@ public class SpringitApplication {
 		};
 	}
 
-	@Bean
-	CommandLineRunner databaseRunner(LinkRepository linkRepository, CommentRepository commentRepository)
-	{
-		return args -> {
-			Link link = new Link("Drogie borowki w sklepie", "https://sklep6028485.homesklep.pl/pl/p/Borowki/23");
-			linkRepository.save(link);
-
-//			Comment comment = new Comment("Borowki sa drogie ale bardzo smaczne", link);
-//			commentRepository.save(comment);
-
-			//link.addComment(comment);
-
-//			Comment comment1 = new Comment("Pychotki te borowki", link);
-//			commentRepository.save(comment1);
-
-			//link.addComment(comment1);
-
-			Link link2 = new Link("Zlociutkie banany", "https://sklep6028485.homesklep.pl/pl/p/Banany/3");
-			linkRepository.save(link2);
-			//System.out.println(link.getComments());
-		};
-	}
+//	@Bean
+//	CommandLineRunner databaseRunner(LinkRepository linkRepository, CommentRepository commentRepository)
+//	{
+//		return args -> {
+//			Link link = new Link("Drogie borowki w sklepie", "https://sklep6028485.homesklep.pl/pl/p/Borowki/23");
+//			linkRepository.save(link);
+//
+////			Comment comment = new Comment("Borowki sa drogie ale bardzo smaczne", link);
+////			commentRepository.save(comment);
+//
+//			//link.addComment(comment);
+//
+////			Comment comment1 = new Comment("Pychotki te borowki", link);
+////			commentRepository.save(comment1);
+//
+//			//link.addComment(comment1);
+//
+//			Link link2 = new Link("Zlociutkie banany", "https://sklep6028485.homesklep.pl/pl/p/Banany/3");
+//			linkRepository.save(link2);
+//			//System.out.println(link.getComments());
+//		};
+//	}
 
 }

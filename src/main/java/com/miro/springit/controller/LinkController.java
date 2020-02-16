@@ -3,7 +3,9 @@ package com.miro.springit.controller;
 import com.miro.springit.domain.Link;
 import com.miro.springit.repository.LinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
@@ -43,9 +45,6 @@ public class LinkController {
 
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id) {
-//        Optional<Link> linkToDelete = linkRepository.findById(id);
-//        linkRepository.delete(linkToDelete.get());
-
         linkRepository.deleteById(id);
     }
 }

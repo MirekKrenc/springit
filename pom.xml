@@ -74,6 +74,12 @@
 			<version>2.2.4.RELEASE</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.ocpsoft.prettytime</groupId>
+			<artifactId>prettytime</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
